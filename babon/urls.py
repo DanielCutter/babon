@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from babonApp import views
+from backendApp import views
 
 router = routers.DefaultRouter()
 router.register(r'todos', views.TodoView, 'todo')
 
 urlpatterns = [
+    path('', include('frontendApp.urls')),
     path('admin/', admin.site.urls),
-    path('babonApp/', include('babonApp.urls')),
+    path('backendApp/', include('backendApp.urls')),
     path('api/', include(router.urls)),
 ]

@@ -1,0 +1,19 @@
+.container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  & .MuiButton-root {
+    margin: 20px 0 0 0;
+  }
+  margin: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginBtn {
+  width: 30%;
+}
