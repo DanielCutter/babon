@@ -19,9 +19,13 @@ from rest_framework import routers
 from projects import views
 
 router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+router.register(r'projects', views.ProjectViewSet)
 
 urlpatterns = [
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
     path('projects/', include('projects.urls')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

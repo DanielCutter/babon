@@ -12,26 +12,25 @@ Initialise using the lock file to install all dependencies.
 poetry install
 ```
 
-## Running front end
+## Running Local Server
 
-After cloning the project, cd into /frontend.
-
-Install packages.
+while inside the babon folder run:
 
 ```bash
-npm install
+poetry run python manage.py runserver
 ```
+Server will be served on localhost:8000
 
-Run local server.
+
+## Migrating local DB
+
+If there are reports of local database migrations missing apply using:
 
 ```bash
-npm start
+poetry run python manage.py migrate
 ```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
